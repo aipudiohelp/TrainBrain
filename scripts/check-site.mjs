@@ -20,8 +20,10 @@ check(/<title>[^<]+<\/title>/.test(html), "Page title is missing");
 check(/<meta name="description" content="[^"]+">/.test(html), "Meta description is missing");
 check(/<link rel="canonical" href="https:\/\//.test(html), "Canonical URL is missing");
 check(/application\/ld\+json/.test(html), "Structured data is missing");
-check(/ProfessionalService/.test(html) && /Organization/.test(html) && /May Gad/.test(html), "Organization, service, or trainer schema is missing");
-check(/id="experts"/.test(html) && /May Gad/.test(html), "May's expert profile is missing");
+check(/ProfessionalService/.test(html) && /Organization/.test(html), "Organization or service schema is missing");
+check(/id="experts"/.test(html) && /TrainBrain Expertise/.test(html), "Company expertise section is missing");
+const expertiseSection = html.match(/<section class="experts"[\s\S]*?<\/section>/)?.[0] ?? "";
+check(expertiseSection.length > 0 && !/<img\b/i.test(expertiseSection), "The company expertise section is missing or contains a personal image");
 check(/id="founder"/.test(html) && /Ibrahim Hammouda/.test(html), "Founder section is missing");
 check(!/Trainer Profile|PROFILE IN PREPARATION|Company logo/.test(html), "Generic trainer placeholders remain");
 
@@ -43,7 +45,7 @@ check(/eastwestdialogue\.org\/ibrahim-hammouda\//.test(html), "Founder profile l
 check(/aria-expanded/.test(html) && /Escape/.test(js), "Accessible responsive menu behavior is incomplete");
 check(/Content-Security-Policy/.test(read("vercel.json")), "Vercel security header configuration is missing");
 check(/prefers-reduced-motion/.test(css) && /:focus-visible/.test(css), "Keyboard focus or reduced-motion styling is missing");
-check(existsSync(join(root, "assets/may-gad-portfolio.webp")), "Trainer image asset is missing");
+check(!existsSync(join(root, "assets/trainer-profile.webp")), "An individual trainer profile image remains in the project");
 
 const canonical = html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
 const sitemap = read("sitemap.xml");
@@ -56,5 +58,5 @@ if (failures.length) {
   console.error(`Site checks failed (${failures.length}):\n- ${failures.join("\n- ")}`);
   process.exitCode = 1;
 } else {
-  console.log("Site checks passed: English-only HTML, profile content, direct Gmail CTAs, SEO metadata/schema, internal links, assets, sitemap/robots, and Vercel headers.");
+  console.log("Site checks passed: English-only HTML, TrainBrain expertise content, direct Gmail CTAs, SEO metadata/schema, internal links, assets, sitemap/robots, and Vercel headers.");
 }
