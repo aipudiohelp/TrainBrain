@@ -5,12 +5,12 @@ This is the SEO handoff for the English-only static website. Technical SEO lives
 ## Current page metadata
 
 - **Title:** TrainBrain | Corporate Training & Executive Consultancy
-- **Description:** Corporate training and executive consultancy in leadership, marketing strategy, communication and skills development for financial and corporate teams.
+- **Description:** TrainBrain offers corporate training and consultancy in marketing strategy, brand positioning, leadership, communication and startup growth.
 - **Canonical:** `https://trainbrain.aipudio.online/`
 - **Open Graph:** English title/description and the local TrainBrain brand image.
 - **Robots:** `index, follow`; `robots.txt` allows public crawling and points to the sitemap.
 - **Sitemap:** one canonical homepage URL in `sitemap.xml`.
-- **Structured data:** `Organization`, `ProfessionalService`, and `Person` (Ibrahim Hammouda and May Gad where appropriate). The structured data does not include personal phone numbers or May's email.
+- **Structured data:** `Organization` and `ProfessionalService`, with the founder represented through the organization data. No trainer profile or personal contact details are included.
 
 ## Before launch
 

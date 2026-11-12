@@ -9,7 +9,6 @@ trainbrain-site/
 ├── assets/
 │   ├── favicon.png
 │   ├── ibrahim-hammouda.webp
-│   ├── may-gad-portfolio.webp
 │   └── trainbrain-logo.webp
 ├── css/
 │   └── styles.css
@@ -35,7 +34,7 @@ See [SEO.md](SEO.md) for the current metadata, sitemap, schema, and post-deploym
 ## Before production launch
 
 - **Confirm the production domain.** Canonical and structured-data URLs currently use `https://trainbrain.aipudio.online/`, the preview address shown in the supplied materials. I could not verify that host from this environment, and it may not be the final production domain. Replace the base URL consistently in `index.html`, `robots.txt`, and `sitemap.xml`, then redeploy.
-- **Review May's profile claims.** The profile is based on the supplied CV. Private contact details from that document are not published. The only public contact email is Ibrahim's TrainBrain Gmail address.
+- **Review company claims.** The anonymous expertise section uses approved professional background information. Confirm any company-specific outcome claims before publication.
 - The founder biography remains in English as supplied.
 - Only `Ibrahimhammouda1@gmail.com` is used as the public contact email. No phone number or personal address from the supplied materials is published.
 
@@ -62,7 +61,7 @@ git remote add origin https://github.com/YOUR_GITHUB_OWNER/trainbrain-site.git
 git push -u origin main
 ```
 
-Git must be installed and authenticated to GitHub. Keep the repository free of the source CV and unrelated personal files. The provided trainer image is locally optimized for the site.
+Git must be installed and authenticated to GitHub. Keep the repository free of the source CV and unrelated personal files. The repository contains only the approved company logo and founder portrait assets.
 
 ## Deploy on Vercel
 
