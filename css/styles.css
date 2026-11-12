@@ -24,7 +24,6 @@ section{padding:72px 0;scroll-margin-top:88px}.about{display:grid;grid-template-
 .sectors{background:#f6f8fa}.sectorgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:27px}.sector{display:flex;align-items:center;gap:15px;background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.sectoricon{width:58px;height:58px;flex:0 0 58px;border-radius:9px;background:linear-gradient(135deg,#073B78,#0878C9);display:grid;place-items:center;color:var(--gold2);font-size:25px}.sector h3{margin:0 0 4px;font-size:15px}.sector p{margin:0;color:var(--muted);font-size:12px}
 .cta{padding:0 0 40px;background:#f6f8fa}.ctainner{border-radius:15px;background:linear-gradient(100deg,#073B78,#174365);color:white;padding:26px 35px;display:flex;align-items:center;justify-content:space-between;gap:20px}.ctainner h2{font-size:23px;margin:0 0 4px}.ctainner p{margin:0;color:#d3deea;font-size:13px}
 footer{background:#052B59;color:white;padding:32px 0}.footergrid{display:grid;grid-template-columns:1.1fr 1fr 1fr .7fr;gap:25px;align-items:start}.footcol{border-inline-end:1px solid #ffffff35;padding-inline-end:20px;min-height:62px}.footcol:last-child{border:0}.footcol strong{display:block;font-size:13px;margin-bottom:5px}.footcol p{font-size:12px;color:#c7d2df;margin:0}.footbrand{font-size:24px;font-weight:850;display:flex;align-items:center;gap:10px}.footbrand img{width:42px;height:42px;object-fit:contain;background:#fff;border-radius:50%;padding:2px}.copyright{border-top:1px solid #ffffff20;margin-top:25px;padding-top:15px;color:#9eafc0;font-size:11px;text-align:center}.site-credit{color:var(--gold2);font-weight:750;white-space:nowrap}.site-credit:hover{color:#fff;text-decoration:underline}.credit-separator{color:#71849a}
-body[dir="rtl"]{font-family:Tahoma,"Segoe UI",Arial,sans-serif}body[dir="rtl"] .hero h1{letter-spacing:0;line-height:1.35}body[dir="rtl"] .eyebrow{letter-spacing:0}body[dir="rtl"] .sectiontag{letter-spacing:0}body[dir="rtl"] .navlinks{font-size:14px}
 @media(max-width:980px){.navlinks{gap:13px}.navlinks a:nth-child(5),.navlinks a:nth-child(6){display:none}.servicegrid{grid-template-columns:repeat(3,1fr)}.methodgrid{grid-template-columns:repeat(3,1fr)}.methodintro{grid-column:1/-1}.methoditem:first-of-type{border:0}.about{gap:30px}}
 @media(max-width:700px){.container{width:min(100% - 30px,560px)}.nav{height:68px}.brand{font-size:20px}.brand-logo{width:40px;height:40px;flex-basis:40px}.navlinks{display:none}.navtools .btn{display:none}.hero-grid{grid-template-columns:1fr;padding:55px 0 35px}.hero h1{font-size:39px}.hero-art{height:230px}.orbit{width:165px;height:165px}.orbit span{font-size:48px}.proofgrid{grid-template-columns:1fr;gap:12px}.proofitem{border:0;border-bottom:1px solid #ffffff30;padding:8px 4px}.about{grid-template-columns:1fr}.visual{min-height:220px}.servicegrid{grid-template-columns:1fr 1fr}.servicevisual{height:100px}.methodgrid{grid-template-columns:1fr}.methoditem{border-inline-start:0;border-top:1px solid #ffffff40;padding:17px 0 0}.valuesgrid,.sectorgrid{grid-template-columns:1fr}.valuebox{border:0;border-bottom:1px solid var(--line);padding:10px 0 20px}.ctainner{align-items:flex-start;flex-direction:column;padding:24px}.footergrid{grid-template-columns:1fr 1fr}.footcol{border:0}.sectiontitle{font-size:29px}section{padding:55px 0}}
 @media(max-width:420px){.servicegrid{grid-template-columns:1fr}.footergrid{grid-template-columns:1fr}.hero h1{font-size:34px}}
@@ -56,3 +55,43 @@ body[dir="rtl"]{font-family:Tahoma,"Segoe UI",Arial,sans-serif}body[dir="rtl"] .
 @media(max-width:700px){.nav{gap:10px}.brand{flex:1;min-width:0;white-space:normal}.brand>span{white-space:normal;line-height:1.12}.brand small{font-size:8px;margin-top:2px}.navtools{gap:8px}.navtools .btn{display:none}.founder-grid{grid-template-columns:1fr}.founder-portrait{width:min(100%,460px);margin-inline:auto}.founder-copy .sectiontitle{font-size:29px}}
 @media(max-width:420px){.brand{font-size:18px}.brand-logo{width:38px;height:38px;flex-basis:38px}.founder-portrait{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* May Gad professional profile */
+.btn:not(.btn-training){background:linear-gradient(135deg,#D7192D,#B51225);color:#fff}
+.btn:focus-visible,.menu-toggle:focus-visible,a:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}
+.btn-training{background:linear-gradient(135deg,#1686cf,#0878c9);color:#fff;box-shadow:0 7px 20px #0878c92c}
+.btn-training:hover{background:linear-gradient(135deg,#0878c9,#073b78)}
+.experts{background:#f4f7fb}
+.expert-heading{margin-bottom:28px}
+.expert-heading .muted{font-size:16px}
+.expert-profile{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);gap:30px;align-items:center;padding:22px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 35px #0b24400b}
+.expert-photo-window{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:4/5;margin:0;border-radius:13px;background:#07172d;box-shadow:0 10px 30px #031b3b35}
+.expert-photo-window img{position:absolute;top:-10%;left:-5.55%;width:284.45%;max-width:none;height:auto}
+.expert-photo-window:after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,#07172dd9);pointer-events:none}
+.expert-photo-window figcaption{position:absolute;z-index:1;inset-inline:18px;bottom:16px;color:#fff;font-size:13px;font-weight:800}
+.expert-role{color:#b51225;font-weight:850;font-size:13px;margin:0 0 12px}
+.expert-intro>p:not(.expert-role){color:var(--muted);font-size:14px;margin:0 0 13px}
+.expert-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:18px}
+.expert-stats div{padding:12px;background:#f4f7fb;border:1px solid var(--line);border-radius:9px}
+.expert-stats strong{display:block;color:var(--navy);font-size:14px}
+.expert-stats span{display:block;color:var(--muted);font-size:11px;line-height:1.4;margin-top:3px}
+.expert-content{display:grid;gap:34px;margin-top:36px}
+.expert-block h3{font-size:23px;color:var(--ink);margin:0 0 16px}
+.expert-card-grid,.topic-grid,.experience-grid,.career-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.expert-card,.topic-grid article,.experience-grid article,.career-grid article{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;box-shadow:0 5px 16px #0b244008}
+.expert-card{border-top:3px solid var(--blue)}
+.expert-card:nth-child(even){border-top-color:var(--red)}
+.expert-card h4,.topic-grid h4,.experience-grid h4,.career-grid h4{font-size:14px;line-height:1.35;color:var(--ink);margin:0 0 7px}
+.expert-card p,.topic-grid p,.experience-grid p,.career-grid p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
+.topic-grid article{background:linear-gradient(145deg,#fff,#f7f9fc)}
+.experience-meta{color:#b51225!important;font-weight:800;margin-bottom:8px!important}
+.career-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.assignment-list{margin-top:14px;padding:15px 17px;border-inline-start:3px solid var(--red);background:#fff;border-radius:8px}
+.assignment-list h4{font-size:13px;margin:0 0 5px}.assignment-list p{color:var(--muted);font-size:12px;margin:0;line-height:1.7}
+.credentials{padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.credentials ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 22px;margin:0;padding-inline-start:20px}
+.credentials li{font-size:13px;color:var(--muted)}
+.training-approach{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:900px){.expert-card-grid,.topic-grid,.experience-grid,.career-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.expert-profile{grid-template-columns:1fr;padding:14px}.expert-photo-window{width:min(100%,420px);margin-inline:auto}.expert-content{gap:28px}.expert-card-grid,.topic-grid,.experience-grid,.career-grid,.credentials ul{grid-template-columns:1fr}.expert-heading .muted{font-size:14px}}
