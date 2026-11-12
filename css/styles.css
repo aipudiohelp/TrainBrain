@@ -57,7 +57,7 @@ footer{background:#052B59;color:white;padding:32px 0}.footergrid{display:grid;gr
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
 
-/* May Gad professional profile */
+/* TrainBrain expertise profile */
 .btn:not(.btn-training){background:linear-gradient(135deg,#D7192D,#B51225);color:#fff}
 .btn:focus-visible,.menu-toggle:focus-visible,a:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}
 .btn-training{background:linear-gradient(135deg,#1686cf,#0878c9);color:#fff;box-shadow:0 7px 20px #0878c92c}
@@ -95,3 +95,7 @@ footer{background:#052B59;color:white;padding:32px 0}.footergrid{display:grid;gr
 .training-approach{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 @media(max-width:900px){.expert-card-grid,.topic-grid,.experience-grid,.career-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.expert-profile{grid-template-columns:1fr;padding:14px}.expert-photo-window{width:min(100%,420px);margin-inline:auto}.expert-content{gap:28px}.expert-card-grid,.topic-grid,.experience-grid,.career-grid,.credentials ul{grid-template-columns:1fr}.expert-heading .muted{font-size:14px}}
+
+.company-profile-summary{padding:26px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 28px #0b24400a}
+.company-profile-summary>p:not(.expert-role){max-width:1000px;color:var(--muted);font-size:14px;margin:0 0 12px}
+.company-profile-summary .expert-stats{margin-top:20px}
