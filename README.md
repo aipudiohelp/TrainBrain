@@ -1,29 +1,42 @@
 # TrainBrain website
 
-Static, bilingual (English/Arabic) TrainBrain website prepared for GitHub and Vercel. It uses local assets and has no build-time or runtime dependencies.
+Static, English-only TrainBrain website prepared for GitHub and Vercel. It uses local assets and has no build-time or runtime dependencies.
 
 ## Project files
 
 ```text
 trainbrain-site/
 ├── assets/
-│   ├── ibrahim-hammouda.webp
 │   ├── favicon.png
+│   ├── ibrahim-hammouda.webp
+│   ├── may-gad-portfolio.webp
 │   └── trainbrain-logo.webp
-├── css/styles.css
-├── js/site.js
-├── scripts/check-site.mjs
+├── css/
+│   └── styles.css
+├── js/
+│   └── site.js
+├── scripts/
+│   └── check-site.mjs
+├── .gitignore
 ├── index.html
 ├── robots.txt
+├── SEO.md
 ├── sitemap.xml
-└── vercel.json
+├── vercel.json
+└── README.md
 ```
+
+## SEO handoff
+
+See [SEO.md](SEO.md) for the current metadata, sitemap, schema, and post-deployment checklist.
+
+
 
 ## Before production launch
 
 - **Confirm the production domain.** Canonical and structured-data URLs currently use `https://trainbrain.aipudio.online/`, the preview address shown in the supplied materials. I could not verify that host from this environment, and it may not be the final production domain. Replace the base URL consistently in `index.html`, `robots.txt`, and `sitemap.xml`, then redeploy.
-- **Confirm the company claims.** The supplied CV lists gym-trainer and educational-center secretary work. It does not substantiate TrainBrain's executive consultancy positioning or company-level service history. The site does not reproduce CV personal data or add credentials from it. Have the client verify the company service copy and the supplied founder biography before launch.
-- The founder biography is reproduced in English as provided. The Arabic copy is a translation for the language switch.
+- **Review May's profile claims.** The profile is based on the supplied CV. Private contact details from that document are not published. The only public contact email is Ibrahim's TrainBrain Gmail address.
+- The founder biography remains in English as supplied.
 - Only `Ibrahimhammouda1@gmail.com` is used as the public contact email. No phone number or personal address from the supplied materials is published.
 
 ## Check locally
@@ -34,7 +47,7 @@ With Node.js installed, run:
 node scripts/check-site.mjs
 ```
 
-This is a static HTML, JavaScript, asset, email, schema, sitemap, and internal-link check. The project does not require a build step.
+This is a static HTML, JavaScript, asset, email, schema, sitemap, English-only, and internal-link check. The project does not require a build step.
 
 ## Publish the project to GitHub
 
@@ -49,7 +62,7 @@ git remote add origin https://github.com/YOUR_GITHUB_OWNER/trainbrain-site.git
 git push -u origin main
 ```
 
-Git must be installed and authenticated to GitHub. Keep the repository free of the source CV and unrelated personal files.
+Git must be installed and authenticated to GitHub. Keep the repository free of the source CV and unrelated personal files. The provided trainer image is locally optimized for the site.
 
 ## Deploy on Vercel
 
@@ -69,4 +82,4 @@ See the official [Vercel static build settings](https://vercel.com/docs/builds/c
 
 ## Verification limits
 
-The bundled checks cover the project files and local links. They do not verify a deployment, DNS, mailbox delivery, search indexing, or provide a penetration test/external vulnerability scan. Recheck the deployed site, headers, canonical URL, sitemap, and contact links after the final domain is connected.
+The bundled checks cover the project files, SEO metadata, and local links. They do not verify a deployment, DNS, mailbox delivery, search indexing, or provide a penetration test/external vulnerability scan. Recheck the deployed site, headers, canonical URL, sitemap, and contact links after the final domain is connected.
