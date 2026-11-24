@@ -54,6 +54,35 @@ check(Boolean(canonical) && sitemap.includes(`<loc>${canonical}</loc>`), "Sitema
 check(Boolean(canonical) && robots.includes(`${canonical}sitemap.xml`), "robots.txt sitemap location does not match canonical base URL");
 check(existsSync(join(root, "SEO.md")), "SEO handoff file is missing");
 
+
+// Final delivery regressions.
+const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+check(schemas.length === 1, 'Expected one structured-data block');
+for (const match of schemas) {
+  try { JSON.parse(match[1]); } catch { check(false, 'Structured-data JSON is invalid'); }
+}
+check(!/Associate Certified Coach|International Coaching Federation|expert-stats/.test(html), 'Removed credential or stats remain in visible HTML');
+check(!existsSync(join(root, 'assets/may-gad-portfolio.webp')), 'Unused personal portfolio asset should not ship');
+check((html.match(/class="card-button"/g) || []).length === 14, 'Expected one action for each of the 14 expertise/topic cards');
+check(html.includes('Our trainers bring approximately 25 years'), 'Client experience wording is missing');
+check(html.indexOf('id="learning-coaching"') < html.indexOf('class="company-profile-summary"'), 'Learning & Coaching must precede corporate training summary');
+check(/Learning &amp; Coaching<\/h3>\s*<h4 class="approach-title">Training approach<\/h4>/.test(html), 'Training approach must sit directly under Learning & Coaching');
+check(!/profile-links/.test(html), 'Additional profile links are out of scope');
+check(/textContent = String\(new Date\(\).getFullYear\(\)\)/.test(js), 'Dynamic copyright year fix is missing');
+const llms = read('llms.txt');
+check(llms.includes(`${canonical}#learning-coaching`), 'llms.txt domain does not match canonical');
+const config = JSON.parse(read('vercel.json'));
+const csp = config.headers[0].headers.find(h => h.key === 'Content-Security-Policy')?.value || '';
+const { createHash } = await import('node:crypto');
+const ldHash = createHash('sha256').update(schemas[0]?.[1] || '').digest('base64');
+check(csp.includes(`'sha256-${ldHash}'`), 'CSP structured-data hash is stale. Run scripts/set-domain.mjs with the current canonical.');
+check(!/unsafe-inline|unsafe-eval/.test(csp), 'Unsafe script/style policy is not allowed');
+const canon = new URL(canonical);
+check(html.includes(`content="${canonical}"`), 'Social URL does not match canonical');
+for (const [, value] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+  check(!/^javascript:/i.test(value), 'A javascript: link was found');
+}
+
 if (failures.length) {
   console.error(`Site checks failed (${failures.length}):\n- ${failures.join("\n- ")}`);
   process.exitCode = 1;
