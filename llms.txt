@@ -1,0 +1,14 @@
+# TrainBrain
+
+> Corporate training, executive consultancy and skills development.
+
+TrainBrain is based in 6th of October City, Giza Governorate, Egypt. Its website describes training in marketing strategy, brand positioning, communication, leadership and startup growth, together with consultancy for financial and corporate sectors.
+
+## Website sections
+- [Learning & Coaching](https://trainbrain-eg.com/#learning-coaching): Practical, learner-centred training approach and listed credentials.
+- [Training expertise](https://trainbrain-eg.com/#expertise-title): Training and facilitation areas.
+- [Selected training topics](https://trainbrain-eg.com/#topics-title): Topics available for enquiry.
+- [Founder](https://trainbrain-eg.com/#founder): Ibrahim Hammouda and his linked external profile.
+- [Contact](https://trainbrain-eg.com/#contact): Consultation and training enquiries via the email links on the website.
+
+The website is the source for current descriptions. No prices, course dates or booking availability are published. llms.txt is a convenience summary, not a guarantee of indexing or AI citation.

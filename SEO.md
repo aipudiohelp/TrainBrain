@@ -1,27 +1,32 @@
-# TrainBrain SEO setup
+# TrainBrain SEO and discovery handoff
 
-This is the SEO handoff for the English-only static website. Technical SEO lives in `index.html`, `robots.txt`, and `sitemap.xml`; the page remains crawlable without client-side language switching.
+## Implemented
 
-## Current page metadata
+- Descriptive page title and description, one H1 and semantic page sections.
+- English document language, accessible headings, image alt text and ordinary HTML links.
+- A single canonical homepage, consistent Open Graph URL and logo image, Twitter summary metadata including the image.
+- Organization, ProfessionalService and WebPage JSON-LD reflecting the visible company information. No invented qualifications, prices, reviews or availability.
+- robots.txt allows crawling and references sitemap.xml. The sitemap contains the canonical homepage only. Anchor sections are not separate pages.
+- llms.txt provides a concise factual discovery summary and links to visible sections. This is optional and is not a guarantee of indexing or AI citations.
+- No keyword stuffing, hidden promotional content, external fonts or analytics trackers.
 
-- **Title:** TrainBrain | Corporate Training & Executive Consultancy
-- **Description:** TrainBrain offers corporate training and consultancy in marketing strategy, brand positioning, leadership, communication and startup growth.
-- **Canonical:** `https://trainbrain.aipudio.online/`
-- **Open Graph:** English title/description and the local TrainBrain brand image.
-- **Robots:** `index, follow`; `robots.txt` allows public crawling and points to the sitemap.
-- **Sitemap:** one canonical homepage URL in `sitemap.xml`.
-- **Structured data:** `Organization` and `ProfessionalService`, with the founder represented through the organization data. No trainer profile or personal contact details are included.
+## Domain
 
-## Before launch
+The current canonical is https://trainbrain-eg.com/, selected by the user for the standalone client website. The domain is not purchased yet. This delivery only configures the files; it does not register the domain, connect DNS, verify ownership or deploy the site. All machine-facing origins now use this production name, not the previous preview subdomain.
 
-1. Confirm the permanent production domain. The current preview host could not be verified in this environment. Update the canonical URL, Open Graph URL/image, all JSON-LD URLs and IDs, `robots.txt`, and `sitemap.xml` together.
-2. After the domain resolves, verify the homepage, `/robots.txt`, and `/sitemap.xml` over HTTPS.
-3. Add the verified domain to Google Search Console and Bing Webmaster Tools, then submit the sitemap.
-4. Validate the structured data and review search snippets after deployment.
-5. Keep the page title, description, headings, image alt text, and visible service copy aligned with the approved company offering. Do not add claims that are not in the approved materials.
+If the final domain name changes, rerun:
 
-## Content topics present on the page
+```sh
+node scripts/set-domain.mjs https://YOUR-ACTUAL-DOMAIN/
+node scripts/check-site.mjs
+```
 
-Corporate training, executive communication, leadership development, marketing strategy, brand positioning, market research, commercial growth, startup mentoring, financial-sector consultancy, and workforce skills development.
+Replace the illustrative domain with the final HTTPS origin. This updates index.html, robots.txt, sitemap.xml and llms.txt, including social image URLs and JSON-LD IDs, and refreshes the exact JSON-LD hash allowed by the Content Security Policy. The hash must stay synchronized whenever that block changes.
 
-No keyword meta tag, analytics tracker, or third-party font is used. This keeps the page lightweight and avoids publishing unverifiable contact or performance claims.
+## After deployment
+
+- Verify HTTPS, canonical redirects, robots, sitemap, social preview and security response headers on the actual host.
+- Submit the sitemap using the owner's search-console accounts.
+- Validate structured data and check that visible content matches any search snippets.
+- Ask the client to sign off retained business/qualification claims. Implementation review does not independently verify those claims.
+- No ranking, rich result or AI-citation outcome is promised.
