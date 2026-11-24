@@ -25,6 +25,6 @@
     }
   });
 
-  const yearText = document.getElementById("year").firstChild;
-  if (yearText) yearText.nodeValue = String(new Date().getFullYear());
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
 })();
